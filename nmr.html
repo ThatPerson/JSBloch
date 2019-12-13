@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<title>NMR Spin Simulator</title>
+		<script src="nmr.js"></script> 
+		<script src="Chart.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	</head>
+	<body>
+		<h1>NMR Spin Simulator</h1>
+		<div class="row">
+			<div class="col-sm-6">
+				<div style="width:100%; " id="spin">
+				</div>
+				<h3>Spins</h3>
+				
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Gamma</th>
+							<th>T1</th>
+							<th>T2</th>
+							<th>Options</th>
+						</tr>
+					</thead>
+					<tbody id="spin_sys">
+						
+					</tbody>
+					<tfoot>
+						<tr>
+							<th>New</th>
+							<th><input class="form-control" style="width:100%" type="number" placeholder="Gamma" id="gamma"></th>
+							<th><input class="form-control" style="width:100%" type="number" placeholder="T1" id="T1"></th>
+							<th><input class="form-control" style="width:100%" type="number" placeholder="T2" id="T2"></th>
+							<th><button class="btn btn-default" style="width:100%" type="button" id="add">Add Spin</button></th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+			
+			<div class="col-sm-6">
+				<div style="width:100%; height:400px;" id="diagram">
+				</div>
+				Bx <b id="bx">0</b><input type="range" min="-50" max="50" value="0" class="slider" id="bxs"><br>
+				By <b id="by">0</b> <input type="range" min="-50" max="50" value="0" class="slider" id="bys"> <br>
+				Bz <b id="bz">100</b> <input type="range" min="0" max="100" value="100" class="slider" id="bzs"><br>
+				<button class="btn btn-danger" type="button" id="reset">Reset</button> 
+				<button class="btn btn-success" type="button" id="start">Start</button> 
+				<button class="btn btn-default" type="button" id="stop">Stop</button> 
+				<br>
+				
+			</div>
+		</div>
+		
+		<script src="control.js"></script>
+	</body>
+</html>
